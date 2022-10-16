@@ -4,6 +4,11 @@ using YoutubeExplode;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(p => p.AddPolicy("corsPolicy", corsPolicyBuilder =>
+{
+    corsPolicyBuilder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+}));
+
 builder.Services.AddTransient<YoutubeClient>();
 
 var logger = new LoggerConfiguration()
@@ -30,6 +35,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+app.UseCors("corsPolicy");
 
 app.UseAuthorization();
 

@@ -1,6 +1,8 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using YoutubeExplode;
 using YoutubeExplode.Videos.Streams;
+using YoutubeExplode.Converter;
 
 namespace YouTubeDownloader.API.Controllers;
 
@@ -18,18 +20,16 @@ public class Mp3Controller : ControllerBase
     }
 
     [HttpPost("download")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
     public async Task<IActionResult> Download(string link)
     {
         var video = await _youtubeClient.Videos.GetAsync(link);
         _logger.LogInformation(video.Title);
-        
-        var streamManifest = await _youtubeClient.Videos.Streams.GetManifestAsync(link);
-        var streamInfo = streamManifest
-            .GetAudioOnlyStreams()
-            .Where(s => s.Container == Container.Mp3)
-            .GetWithHighestBitrate();
-        //await _youtubeClient.Videos.Streams.DownloadAsync(streamInfo, $"video.{streamInfo.Container}");
 
-        return Ok();
+        var streamManifest = await _youtubeClient.Videos.Streams.GetManifestAsync(link);
+        var streamInfo = streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
+        var stream = await _youtubeClient.Videos.Streams.GetAsync(streamInfo);
+
+        return File(stream, "application/octet-stream", $"{video.Title}.mp3");
     }
 }
