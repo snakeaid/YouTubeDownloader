@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeConverter", "YouTubeConverter\YouTubeConverter.csproj", "{222E6F22-3988-4913-A18A-7177782C336C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeDownloader.API", "YouTubeDownloader.API\YouTubeDownloader.API.csproj", "{222E6F22-3988-4913-A18A-7177782C336C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
