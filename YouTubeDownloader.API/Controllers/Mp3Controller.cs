@@ -30,6 +30,6 @@ public class Mp3Controller : ControllerBase
         var streamInfo = streamManifest.GetAudioOnlyStreams().GetWithHighestBitrate();
         var stream = await _youtubeClient.Videos.Streams.GetAsync(streamInfo);
 
-        return File(stream, "application/octet-stream", $"{video.Title}.mp3");
+        return File(stream, "application/mp3", $"{video.Title}.mp3");
     }
 }

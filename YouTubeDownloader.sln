@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeDownloader.API", "YouTubeDownloader.API\YouTubeDownloader.API.csproj", "{222E6F22-3988-4913-A18A-7177782C336C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeDownloader.Primitives", "YouTubeDownloader.Primitives\YouTubeDownloader.Primitives.csproj", "{61B56AB7-89F7-48FD-9FBC-DFD8DA9FFD7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{222E6F22-3988-4913-A18A-7177782C336C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{222E6F22-3988-4913-A18A-7177782C336C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{222E6F22-3988-4913-A18A-7177782C336C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B56AB7-89F7-48FD-9FBC-DFD8DA9FFD7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B56AB7-89F7-48FD-9FBC-DFD8DA9FFD7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B56AB7-89F7-48FD-9FBC-DFD8DA9FFD7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B56AB7-89F7-48FD-9FBC-DFD8DA9FFD7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
